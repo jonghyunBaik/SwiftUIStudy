@@ -15,6 +15,8 @@ struct Weekend : Identifiable {
 
 
 var weekendList = [
+    Weekend(week: "신작"),
+    Weekend(week: "매일+"),
     Weekend(week: "월"),
     Weekend(week: "화"),
     Weekend(week: "수"),

@@ -16,9 +16,8 @@ struct WeekendScrollView: View {
             HStack {
                 ForEach(weekend) { weekend in
                     Text("\(weekend.week)")
-                        .padding(.leading, 20)
-                        .padding(.trailing, 10)
                         .foregroundStyle(.white)
+                        .frame(width: 50)
                 }
             }
             .padding(10)
