@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct WebtoonScrollView: View {
-    let data = Array(1...30).map { "목록 \($0)"}
-       
+    @Binding var dailyWebtoons : [DailyWebtoons]
+    @Binding var weekDay : String
+    
     //화면을 그리드형식으로 꽉채워줌
     let columns = Array(repeating: GridItem(.flexible(minimum: 100), spacing: 0), count: 3)
         
@@ -18,8 +19,10 @@ struct WebtoonScrollView: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
-                ForEach(data, id: \.self) {_ in 
-                    WebtoonImageView()
+                ForEach($dailyWebtoons) {$webtoon in
+                    if webtoon.weekDay1 == weekDay {
+                        WebtoonImageView(dailyWebtoon: $webtoon)
+                    }
                 }
             }
         }
@@ -28,7 +31,8 @@ struct WebtoonScrollView: View {
 }
 
 #Preview {
-    WebtoonScrollView()
+    WebtoonScrollView(
+        dailyWebtoons: .constant(DailyWebtoons.sampleData), weekDay: .constant("수"))
 }
 
 

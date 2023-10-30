@@ -9,15 +9,21 @@ import SwiftUI
 
 struct WeekendScrollView: View {
     var weekend : [Weekend] = weekendList
+    @Binding var selectedDay : String
     
     
     var body: some View {
         ScrollView(.horizontal) {
             HStack {
                 ForEach(weekend) { weekend in
-                    Text("\(weekend.week)")
-                        .foregroundStyle(.white)
-                        .frame(width: 50)
+                    Button(action: {
+                        selectedDay = weekend.week
+                    }, label: {
+                        Text("\(weekend.week)")
+                            .foregroundStyle(
+                                selectedDay == weekend.week ? .green : .white)
+                            .frame(width: 50)
+                    })
                 }
             }
             .padding(10)
@@ -27,7 +33,7 @@ struct WeekendScrollView: View {
 }
 
 #Preview {
-    WeekendScrollView()
+    WeekendScrollView(selectedDay: .constant("화"))
 }
 
 

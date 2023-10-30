@@ -12,8 +12,6 @@ struct Weekend : Identifiable {
     let week : String
 }
 
-
-
 var weekendList = [
     Weekend(week: "신작"),
     Weekend(week: "매일+"),
@@ -26,3 +24,7 @@ var weekendList = [
     Weekend(week: "일"),
     Weekend(week: "완결")
 ]
+
+enum WeekDay {
+    case new, daily, mon, tue, wed, thu, fri, sat, sun, finished
+}
