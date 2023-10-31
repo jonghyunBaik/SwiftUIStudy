@@ -9,7 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        WebtoonTapView()
+        NavigationStack {
+            WebtoonTapView()
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button(action: {}) {
+                            Image(systemName: "cart.fill")
+                                .foregroundColor(.white)
+                        }
+                    }
+                    ToolbarItem{
+                        Button(action: {}) {
+                            Image(systemName: "magnifyingglass")
+                                .foregroundColor(.white)
+                        }
+                    }
+                }
+        }
     }
 }
 
