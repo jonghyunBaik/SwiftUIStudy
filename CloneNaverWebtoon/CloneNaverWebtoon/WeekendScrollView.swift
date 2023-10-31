@@ -29,6 +29,7 @@ struct WeekendScrollView: View {
             .padding(10)
             .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.172))
         }
+        .ignoresSafeArea()
     }
 }
 

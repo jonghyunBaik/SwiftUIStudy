@@ -8,17 +8,14 @@
 import SwiftUI
 
 struct WebtoonTapView: View {
+    @Binding var scrollPosition : CGPoint
     
-    init() {
-        UITabBar.appearance().backgroundColor = UIColor(hue: 1.0, saturation: 0.0, brightness: 0.172, alpha: 10.0)
-
-    }
     
     var body: some View {
         NavigationStack {
             TabView {
                 Group {
-                    WebtoonTap()
+                    WebtoonTap(scrollPosition: $scrollPosition)
                       .tabItem {
                         Image(systemName: "calendar")
                         Text("웹툰")
@@ -52,9 +49,10 @@ struct WebtoonTapView: View {
             }
             .font(.headline)
         }
+        .ignoresSafeArea()
     }
 }
 
 #Preview {
-    WebtoonTapView()
+    WebtoonTapView(scrollPosition: .constant(.zero))
 }
