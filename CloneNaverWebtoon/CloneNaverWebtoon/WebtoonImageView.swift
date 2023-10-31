@@ -21,11 +21,21 @@ struct WebtoonImageView : View {
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                 HStack {
-                    Text(dailyWebtoon.author)
-                        .multilineTextAlignment(.leading)
-                        .lineLimit(1)
+                    if dailyWebtoon.favorite  {
+                        Label(
+                            title: { Text("관심웹툰") },
+                            icon: { Image(systemName: "checkmark") }
+                        )
+                        .foregroundColor(.green)
+                    } else {
+                        Text(dailyWebtoon.author)
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(1)
+                    }
                     Spacer()
-                    Label(String(dailyWebtoon.point), systemImage: "star.fill")
+                    
+                    dailyWebtoon.favorite ?
+                    nil : Label(String(dailyWebtoon.point), systemImage: "star.fill")
                         
                 }
                 .font(.caption2)

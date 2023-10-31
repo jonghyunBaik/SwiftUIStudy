@@ -19,6 +19,7 @@
 		F60BA45E2AEEA41F0039B56D /* WebtoonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60BA45D2AEEA41F0039B56D /* WebtoonImageView.swift */; };
 		F6C861792AEFC00100DE9DC1 /* DailyWebtoons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C861782AEFC00100DE9DC1 /* DailyWebtoons.swift */; };
 		F6C8617B2AEFE36A00DE9DC1 /* WebtoonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8617A2AEFE36A00DE9DC1 /* WebtoonDetailView.swift */; };
+		F6D4CD3A2AF122BD00FBA1A5 /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D4CD392AF122BD00FBA1A5 /* BannerAdView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		F60BA45D2AEEA41F0039B56D /* WebtoonImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonImageView.swift; sourceTree = "<group>"; };
 		F6C861782AEFC00100DE9DC1 /* DailyWebtoons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWebtoons.swift; sourceTree = "<group>"; };
 		F6C8617A2AEFE36A00DE9DC1 /* WebtoonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonDetailView.swift; sourceTree = "<group>"; };
+		F6D4CD392AF122BD00FBA1A5 /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				F60BA4552AEE8BC80039B56D /* Weekend.swift */,
 				F6C861782AEFC00100DE9DC1 /* DailyWebtoons.swift */,
 				F60BA4592AEE99550039B56D /* WebtoonTapView.swift */,
+				F6D4CD392AF122BD00FBA1A5 /* BannerAdView.swift */,
 				F60BA4492AEE6F810039B56D /* Assets.xcassets */,
 				F60BA44B2AEE6F810039B56D /* Preview Content */,
 				F60BA45D2AEEA41F0039B56D /* WebtoonImageView.swift */,
@@ -167,6 +170,7 @@
 				F60BA4462AEE6F7F0039B56D /* CloneNaverWebtoonApp.swift in Sources */,
 				F6C861792AEFC00100DE9DC1 /* DailyWebtoons.swift in Sources */,
 				F60BA4542AEE70390039B56D /* WeekendScrollView.swift in Sources */,
+				F6D4CD3A2AF122BD00FBA1A5 /* BannerAdView.swift in Sources */,
 				F6C8617B2AEFE36A00DE9DC1 /* WebtoonDetailView.swift in Sources */,
 				F60BA45E2AEEA41F0039B56D /* WebtoonImageView.swift in Sources */,
 				F60BA4562AEE8BC80039B56D /* Weekend.swift in Sources */,

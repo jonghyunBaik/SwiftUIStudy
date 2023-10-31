@@ -48,6 +48,7 @@ struct WebtoonTapView: View {
                 .toolbarBackground(Color(hue: 1.0, saturation: 0.0, brightness: 0.172), for: .tabBar)
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)
+                
             }
             .font(.headline)
         }

@@ -12,14 +12,31 @@ struct WebtoonTap: View {
     @State private var webtoons = DailyWebtoons.sampleData
     
     var body: some View {
-        VStack {
-            WeekendScrollView(selectedDay: $weekDay)
-            WebtoonScrollView(dailyWebtoons: $webtoons, weekDay: $weekDay)
-                
+        NavigationStack {
+            VStack {
+                WeekendScrollView(selectedDay: $weekDay)
+                WebtoonScrollView(dailyWebtoons: $webtoons, weekDay: $weekDay)
+                    
+            }
+            .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.172))
+            .onChange(of: weekDay) {
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {}) {
+                        Image(systemName: "cart.fill")
+                            .foregroundColor(.white)
+                    }
+                }
+                ToolbarItem{
+                    Button(action: {}) {
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(.white)
+                    }
+                }
+            }
         }
-        .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.172))
-        .onChange(of: weekDay) { 
-        }
+        
         
     }
 }
