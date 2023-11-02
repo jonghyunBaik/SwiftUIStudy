@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct WebtoonTapView: View {
-    @Binding var scrollPosition : CGPoint
     
     
     var body: some View {
         NavigationStack {
             TabView {
                 Group {
-                    WebtoonTap(scrollPosition: $scrollPosition)
+                    WebtoonTap()
                       .tabItem {
                         Image(systemName: "calendar")
                         Text("웹툰")
@@ -54,5 +53,5 @@ struct WebtoonTapView: View {
 }
 
 #Preview {
-    WebtoonTapView(scrollPosition: .constant(.zero))
+    WebtoonTapView()
 }
