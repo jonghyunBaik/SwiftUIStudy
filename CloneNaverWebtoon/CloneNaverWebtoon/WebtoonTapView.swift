@@ -34,7 +34,7 @@ struct WebtoonTapView: View {
                         Image(systemName: "face.smiling.inverse")
                         Text("MY")
                       }
-                    Text("The Last Tab")
+                    MoreTapView()
                         .tabItem {
                             Image(systemName: "square.on.square")
                             Text("더보기")
@@ -47,8 +47,8 @@ struct WebtoonTapView: View {
                 
             }
             .font(.headline)
+            .ignoresSafeArea()
         }
-        .ignoresSafeArea()
     }
 }
 
