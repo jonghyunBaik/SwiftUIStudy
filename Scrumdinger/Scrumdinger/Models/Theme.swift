@@ -1,27 +1,40 @@
+/*
+ See LICENSE folder for this sample’s licensing information.
+ */
+
 import SwiftUI
 
-
-enum Theme : String, CaseIterable, Identifiable {
-    case bubblegum, buttercup, indigo, lavender, magenta, navy, orange, oxblood, periwinkle, poppy, purple, seafoam, sky, tan, teal, yellow
+enum Theme: String, CaseIterable, Identifiable {
+    case bubblegum
+    case buttercup
+    case indigo
+    case lavender
+    case magenta
+    case navy
+    case orange
+    case oxblood
+    case periwinkle
+    case poppy
+    case purple
+    case seafoam
+    case sky
+    case tan
+    case teal
+    case yellow
     
-    var mainColor : Color {
-        return Color(rawValue)
-    }
-    
-    var accentColor : Color {
+    var accentColor: Color {
         switch self {
-        case .bubblegum, .buttercup, .lavender, .orange, .periwinkle, .poppy, .seafoam, .sky, .tan, .teal, .yellow: return Color(.black)
-        case .indigo, .magenta, .navy, .oxblood, .purple : return Color(.white)
+        case .bubblegum, .buttercup, .lavender, .orange, .periwinkle, .poppy, .seafoam, .sky, .tan, .teal, .yellow: return .black
+        case .indigo, .magenta, .navy, .oxblood, .purple: return .white
         }
-        
     }
-    
+    var mainColor: Color {
+        Color(rawValue)
+    }
     var name: String {
         rawValue.capitalized
     }
-    
-    var id : String {
+    var id: String {
         name
     }
-    
 }

@@ -1,9 +1,6 @@
-//
-//  MeetingFooterView.swift
-//  Scrumdinger
-//
-//  Created by jonghyun baik on 11/8/23.
-//
+/*
+ See LICENSE folder for this sample’s licensing information.
+ */
 
 import SwiftUI
 
@@ -15,11 +12,9 @@ struct MeetingFooterView: View {
         guard let index = speakers.firstIndex(where: { !$0.isCompleted }) else { return nil }
         return index + 1
     }
-    
     private var isLastSpeaker: Bool {
         return speakers.dropLast().allSatisfy { $0.isCompleted }
     }
-    
     private var speakerText: String {
         guard let speakerNumber = speakerNumber else { return "No more speakers" }
         return "Speaker \(speakerNumber) of \(speakers.count)"
@@ -30,8 +25,7 @@ struct MeetingFooterView: View {
             HStack {
                 if isLastSpeaker {
                     Text("Last Speaker")
-                }
-                else {
+                } else {
                     Text(speakerText)
                     Spacer()
                     Button(action: skipAction) {
@@ -45,7 +39,9 @@ struct MeetingFooterView: View {
     }
 }
 
-#Preview {
-    MeetingFooterView(speakers: DailyScrum.sampleData[0].attendees.speakers, skipAction: {})
-        .previewLayout(.sizeThatFits)
+struct MeetingFooterView_Previews: PreviewProvider {
+    static var previews: some View {
+        MeetingFooterView(speakers: DailyScrum.sampleData[0].attendees.speakers, skipAction: {})
+            .previewLayout(.sizeThatFits)
+    }
 }

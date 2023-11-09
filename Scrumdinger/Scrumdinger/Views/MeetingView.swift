@@ -1,20 +1,18 @@
-//
-//  ContentView.swift
-//  Scrumdinger
-//
-//  Created by jonghyun baik on 10/20/23.
-//
+/*
+ See LICENSE folder for this sample’s licensing information.
+ */
 
 import SwiftUI
 import AVFoundation
 
 struct MeetingView: View {
-    @Binding var scrum : DailyScrum
+    @Binding var scrum: DailyScrum
     @StateObject var scrumTimer = ScrumTimer()
     
-    private var player : AVPlayer { AVPlayer.sharedDingPlayer }
+    private var player: AVPlayer { AVPlayer.sharedDingPlayer }
+    
     var body: some View {
-        ZStack{
+        ZStack {
             RoundedRectangle(cornerRadius: 16.0)
                 .fill(scrum.theme.mainColor)
             VStack {
@@ -25,8 +23,8 @@ struct MeetingView: View {
             }
         }
         .padding()
-        .foregroundStyle(scrum.theme.accentColor)
-        .onAppear{
+        .foregroundColor(scrum.theme.accentColor)
+        .onAppear {
             scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)
             scrumTimer.speakerChangedAction = {
                 player.seek(to: .zero)
@@ -34,13 +32,15 @@ struct MeetingView: View {
             }
             scrumTimer.startScrum()
         }
-        .onDisappear{
+        .onDisappear {
             scrumTimer.stopScrum()
         }
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-#Preview {
-    MeetingView(scrum: .constant(DailyScrum.sampleData[0]))
+struct MeetingView_Previews: PreviewProvider {
+    static var previews: some View {
+        MeetingView(scrum: .constant(DailyScrum.sampleData[0]))
+    }
 }
