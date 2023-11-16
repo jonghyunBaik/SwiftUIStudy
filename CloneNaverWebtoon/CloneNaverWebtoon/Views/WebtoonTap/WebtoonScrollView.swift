@@ -17,16 +17,19 @@ struct WebtoonScrollView: View {
     
     
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns) {
-                ForEach($dailyWebtoons) {$webtoon in
-                    if webtoon.weekDay1 == weekDay {
-                        WebtoonImageView(dailyWebtoon: $webtoon)
+        VStack {
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                    ForEach($dailyWebtoons) {$webtoon in
+                        if webtoon.weekDay1 == weekDay {
+                            WebtoonImageView(dailyWebtoon: $webtoon)
+                        }
                     }
                 }
+                Color.clear.frame(height: 100)
             }
+            .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.172))
         }
-        .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.172))
     }
 }
 
